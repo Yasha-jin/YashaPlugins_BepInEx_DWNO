@@ -12,7 +12,7 @@ public class Plugin : BasePlugin
 {
     internal const string GUID = "Yashajin.DWNO.ShowHiddenParameters";
     internal const string PluginName = "ShowHiddenParameters";
-    internal const string PluginVersion = "1.0";
+    internal const string PluginVersion = "1.0.1";
 
     public static UnityEngine.GameObject BattleWinText;
 
@@ -80,7 +80,7 @@ public class Plugin : BasePlugin
         MoodBase.name = "MoodBase";
         MoodBase.transform.SetParent(_base);
         MoodBase.transform.localScale = _baseCopy.transform.localScale;
-        MoodBase.transform.position = _baseCopy.transform.position + new Vector3(418, 0, 0);
+        MoodBase.transform.localPosition = _baseCopy.transform.localPosition + new Vector3(250.8f, 0, 0);
         MoodBase.GetComponent<UnityEngine.UI.Image>().m_Sprite = BaseSprite;
         MoodBase.GetComponent<UnityEngine.RectTransform>().sizeDelta = new Vector2(45, 32);
 
@@ -88,7 +88,7 @@ public class Plugin : BasePlugin
         DisciplineBase.name = "DisciplineBase";
         DisciplineBase.transform.SetParent(_base);
         DisciplineBase.transform.localScale = _baseCopy.transform.localScale;
-        DisciplineBase.transform.position = MoodBase.transform.position + new Vector3(0, -50, 0);
+        DisciplineBase.transform.localPosition = MoodBase.transform.localPosition + new Vector3(0, -30, 0);
         DisciplineBase.GetComponent<UnityEngine.UI.Image>().m_Sprite = BaseSprite;
         DisciplineBase.GetComponent<UnityEngine.RectTransform>().sizeDelta = new Vector2(45, 32);
 
@@ -96,7 +96,7 @@ public class Plugin : BasePlugin
         CurseBase.name = "CurseBase";
         CurseBase.transform.SetParent(_base);
         CurseBase.transform.localScale = _baseCopy.transform.localScale;
-        CurseBase.transform.position = DisciplineBase.transform.position + new Vector3(0, -50, 0);
+        CurseBase.transform.localPosition = DisciplineBase.transform.localPosition + new Vector3(0, -30, 0);
         CurseBase.GetComponent<UnityEngine.UI.Image>().m_Sprite = BaseSprite;
         CurseBase.GetComponent<UnityEngine.RectTransform>().sizeDelta = new Vector2(45, 32);
 
@@ -104,7 +104,7 @@ public class Plugin : BasePlugin
         FatigueBase.name = "FatigueBase";
         FatigueBase.transform.SetParent(_base);
         FatigueBase.transform.localScale = _baseCopy.transform.localScale;
-        FatigueBase.transform.position = CurseBase.transform.position + new Vector3(0, -50, 0);
+        FatigueBase.transform.localPosition = CurseBase.transform.localPosition + new Vector3(0, -30, 0);
         FatigueBase.GetComponent<UnityEngine.UI.Image>().m_Sprite = BaseSprite;
         FatigueBase.GetComponent<UnityEngine.RectTransform>().sizeDelta = new Vector2(45, 32);
     }
@@ -121,12 +121,12 @@ public class Plugin : BasePlugin
         TrainingFailureText.name = "TrainingFailure";
 
         BattleWinText.transform.SetParent(_text);
-        BattleWinText.transform.position = _textCopy.transform.position + new Vector3(655, -100, 0);
+        BattleWinText.transform.localPosition = _textCopy.transform.localPosition + new Vector3(393f, -60, 0);
         BattleWinText.transform.localScale = _textCopy.transform.localScale;
         BattleWinText.GetComponent<UnityEngine.UI.Text>().alignment = UnityEngine.TextAnchor.MiddleLeft;
 
         TrainingFailureText.transform.SetParent(_text);
-        TrainingFailureText.transform.position = BattleWinText.transform.position + new Vector3(0, -50, 0);
+        TrainingFailureText.transform.localPosition = BattleWinText.transform.localPosition + new Vector3(0, -30, 0);
         TrainingFailureText.transform.localScale = _textCopy.transform.localScale;
         TrainingFailureText.GetComponent<UnityEngine.UI.Text>().alignment = UnityEngine.TextAnchor.MiddleLeft;
     }
@@ -140,25 +140,25 @@ public class Plugin : BasePlugin
         MoodValue.name = "MoodValue";
         MoodValue.transform.SetParent(_value);
         MoodValue.transform.localScale = _valueCopy.transform.localScale;
-        MoodValue.transform.position = _valueCopy.transform.position + new Vector3(420, 0, 0);
+        MoodValue.transform.localPosition = _valueCopy.transform.localPosition + new Vector3(252f, 0, 0);
 
         DisciplineValue = UnityEngine.Object.Instantiate(_valueCopy);
         DisciplineValue.name = "DisciplineValue";
         DisciplineValue.transform.SetParent(_value);
         DisciplineValue.transform.localScale = _valueCopy.transform.localScale;
-        DisciplineValue.transform.position = MoodValue.transform.position + new Vector3(0, -50, 0);
+        DisciplineValue.transform.localPosition = MoodValue.transform.localPosition + new Vector3(0, -30, 0);
 
         CurseValue = UnityEngine.Object.Instantiate(_valueCopy);
         CurseValue.name = "CurseValue";
         CurseValue.transform.SetParent(_value);
         CurseValue.transform.localScale = _valueCopy.transform.localScale;
-        CurseValue.transform.position = DisciplineValue.transform.position + new Vector3(0, -50, 0);
+        CurseValue.transform.localPosition = DisciplineValue.transform.localPosition + new Vector3(0, -30, 0);
 
         FatigueValue = UnityEngine.Object.Instantiate(_valueCopy);
         FatigueValue.name = "FatigueValue";
         FatigueValue.transform.SetParent(_value);
         FatigueValue.transform.localScale = _valueCopy.transform.localScale;
-        FatigueValue.transform.position = CurseValue.transform.position + new Vector3(0, -50, 0);
+        FatigueValue.transform.localPosition = CurseValue.transform.localPosition + new Vector3(0, -30, 0);
     }
 
     [HarmonyPatch(typeof(uPartnerStatusPanelStatus), "SetStatus")]
