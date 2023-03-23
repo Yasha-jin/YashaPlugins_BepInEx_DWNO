@@ -24,6 +24,7 @@ public class Plugin : BasePlugin
     private static void PatchMonVisibilityInfo(uGenelogyInformationUI __instance)
     {
         var HeadTransform = __instance.m_After.transform.Find("Head").gameObject.transform;
+        HeadTransform.Find("Key_Digimon").gameObject.active = false;
         HeadTransform.Find("Nature").gameObject.active = false;
         HeadTransform.Find("Property").gameObject.active = false;
         HeadTransform.Find("Digimon").gameObject.active = false;
