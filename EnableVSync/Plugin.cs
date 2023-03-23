@@ -9,7 +9,7 @@ namespace EnableVSync;
 [BepInProcess("Digimon World Next Order.exe")]
 public class Plugin : BasePlugin
 {
-    internal const string GUID = "BepInEx.YashaPlugins.DWNO.EnableVSync";
+    internal const string GUID = "Yashajin.DWNO.EnableVSync";
     internal const string PluginName = "EnableVSync";
     internal const string PluginVersion = "1.0";
 

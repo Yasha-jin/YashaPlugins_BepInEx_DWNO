@@ -9,7 +9,7 @@ namespace PlayerSpeedModifier;
 [BepInProcess("Digimon World Next Order.exe")]
 public class Plugin : BasePlugin
 {
-    internal const string GUID = "BepInEx.YashaPlugins.DWNO.PlayerSpeedModifier";
+    internal const string GUID = "Yashajin.DWNO.PlayerSpeedModifier";
     internal const string PluginName = "PlayerSpeedModifier";
     internal const string PluginVersion = "1.0";
 

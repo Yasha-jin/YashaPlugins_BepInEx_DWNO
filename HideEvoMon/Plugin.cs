@@ -8,7 +8,7 @@ namespace HideEvoMon;
 [BepInProcess("Digimon World Next Order.exe")]
 public class Plugin : BasePlugin
 {
-    internal const string GUID = "BepInEx.YashaPlugins.DWNO.HideEvoMon";
+    internal const string GUID = "Yashajin.DWNO.HideEvoMon";
     internal const string PluginName = "HideEvoMon";
     internal const string PluginVersion = "1.0";
 

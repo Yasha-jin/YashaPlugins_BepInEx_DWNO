@@ -10,7 +10,7 @@ namespace DigiScale;
 [BepInProcess("Digimon World Next Order.exe")]
 public class Plugin : BasePlugin
 {
-    internal const string GUID = "BepInEx.YashaPlugins.DWNO.DigiScale";
+    internal const string GUID = "Yashajin.DWNO.DigiScale";
     internal const string PluginName = "DigiScale";
     internal const string PluginVersion = "1.0";
 

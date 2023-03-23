@@ -10,7 +10,7 @@ namespace ShowHiddenParameters;
 [BepInProcess("Digimon World Next Order.exe")]
 public class Plugin : BasePlugin
 {
-    internal const string GUID = "BepInEx.YashaPlugins.DWNO.ShowHiddenParameters";
+    internal const string GUID = "Yashajin.DWNO.ShowHiddenParameters";
     internal const string PluginName = "ShowHiddenParameters";
     internal const string PluginVersion = "1.0";
 
