@@ -7,4 +7,13 @@
      <Private>False</Private>
   </ProjectReference>
 </ItemDefinitionGroup>
+<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <DebugType>none</DebugType>
+</PropertyGroup>
+<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <DebugType>none</DebugType>
+</PropertyGroup>
+<Target Name="PostBuild" BeforeTargets="PostBuildEvent">
+  <Exec Command="del $(TargetDir)$(TargetName).deps.json" />
+</Target>
 </Project>
