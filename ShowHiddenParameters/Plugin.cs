@@ -14,7 +14,7 @@ public class Plugin : BasePlugin
 {
     internal const string GUID = "Yashajin.DWNO.ShowHiddenParameters";
     internal const string PluginName = "ShowHiddenParameters";
-    internal const string PluginVersion = "1.0.2";
+    internal const string PluginVersion = "1.0.3";
 
     public static UnityEngine.GameObject BattleWinText;
 
@@ -47,8 +47,10 @@ public class Plugin : BasePlugin
         Assembly _assembly = Assembly.GetExecutingAssembly();
         Stream _stream = _assembly.GetManifestResourceStream(Namespace + "." + texturePath.Replace("/", "."));
         byte[] fileData = _stream.ReadBytes();
-        Texture2D tex = new Texture2D(2, 2);
+        Texture2D tex = new Texture2D(4, 4, TextureFormat.RGBA32, false);
         tex.LoadImage(fileData, false);
+        tex.filterMode = FilterMode.Point;
+        tex.wrapMode = TextureWrapMode.Clamp;
         return tex;
     }
 
