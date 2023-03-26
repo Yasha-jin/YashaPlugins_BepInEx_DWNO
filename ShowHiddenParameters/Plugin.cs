@@ -1,7 +1,9 @@
 ﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
+using Cpp2IL.Core.Extensions;
 using HarmonyLib;
 using System.IO;
+using System.Reflection;
 using UnityEngine;
 
 namespace ShowHiddenParameters;
@@ -12,7 +14,7 @@ public class Plugin : BasePlugin
 {
     internal const string GUID = "Yashajin.DWNO.ShowHiddenParameters";
     internal const string PluginName = "ShowHiddenParameters";
-    internal const string PluginVersion = "1.0.1";
+    internal const string PluginVersion = "1.0.2";
 
     public static UnityEngine.GameObject BattleWinText;
 
@@ -40,18 +42,13 @@ public class Plugin : BasePlugin
         Log.LogInfo($"Plugin {GUID} is loaded!");
         Harmony.CreateAndPatchAll(typeof(Plugin));
     }
-
-    public static Texture2D LoadPNG(string filePath)
+    public static Texture2D LoadEmbeddedTexture(string Namespace, string texturePath)
     {
-        Texture2D tex = null;
-        byte[] fileData;
-
-        if (File.Exists(filePath))
-        {
-            fileData = File.ReadAllBytes(filePath);
-            tex = new Texture2D(2, 2);
-            tex.LoadImage(fileData, false);
-        }
+        Assembly _assembly = Assembly.GetExecutingAssembly();
+        Stream _stream = _assembly.GetManifestResourceStream(Namespace + "." + texturePath.Replace("/", "."));
+        byte[] fileData = _stream.ReadBytes();
+        Texture2D tex = new Texture2D(2, 2);
+        tex.LoadImage(fileData, false);
         return tex;
     }
 
@@ -73,7 +70,7 @@ public class Plugin : BasePlugin
         Transform _base = __instance.transform.Find("Base").transform.Find("Image").transform;
         GameObject _baseCopy = _base.Find("Number_Base_1").gameObject;
 
-        UnityEngine.Texture2D BaseTexture = LoadPNG(Paths.PluginPath + "/" + PluginName + "/Assets/Base_3.png");
+        UnityEngine.Texture2D BaseTexture = LoadEmbeddedTexture(typeof(Plugin).Namespace, "Assets/Base_3.png");
         UnityEngine.Sprite BaseSprite = Sprite.Create(BaseTexture, new Rect(0, 0, BaseTexture.width, BaseTexture.height), new Vector2(0.5f, 0.5f));
 
         MoodBase = UnityEngine.Object.Instantiate(_baseCopy);

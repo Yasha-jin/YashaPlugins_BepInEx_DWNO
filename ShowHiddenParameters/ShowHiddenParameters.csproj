@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>ShowHiddenParameters</AssemblyName>
     <Description>Show the hidden parameters such as battle win and add a text value for sliders like mood and discipline</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -14,6 +14,14 @@
     </RestoreAdditionalProjectSources>
     <RootNamespace>ShowHiddenParameters</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Base_3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Base_3.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
