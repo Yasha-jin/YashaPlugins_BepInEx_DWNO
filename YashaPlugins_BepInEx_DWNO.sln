@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnemyDynamicStats", "EnemyD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UncappedStats", "UncappedStats\UncappedStats.csproj", "{4DAF3438-4956-4544-AA86-BE6255F7B12F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadAllSaves", "LoadAllSaves\LoadAllSaves.csproj", "{C878345E-4C1C-4136-88C5-AB76716D9417}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigimonDubCriesExpansion", "DigimonDubCriesExpansion\DigimonDubCriesExpansion.csproj", "{65EE21DA-B08C-4D28-B52D-47B6603504EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{4DAF3438-4956-4544-AA86-BE6255F7B12F}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{4DAF3438-4956-4544-AA86-BE6255F7B12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DAF3438-4956-4544-AA86-BE6255F7B12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C878345E-4C1C-4136-88C5-AB76716D9417}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{C878345E-4C1C-4136-88C5-AB76716D9417}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{C878345E-4C1C-4136-88C5-AB76716D9417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C878345E-4C1C-4136-88C5-AB76716D9417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65EE21DA-B08C-4D28-B52D-47B6603504EA}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{65EE21DA-B08C-4D28-B52D-47B6603504EA}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{65EE21DA-B08C-4D28-B52D-47B6603504EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EE21DA-B08C-4D28-B52D-47B6603504EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
